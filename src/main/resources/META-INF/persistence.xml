@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+<persistence-unit name="mysqlUnit">
+    <properties>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Hongkong"/>
+
+        <property name="javax.persistence.jdbc.user" value="root"/>
+
+        <property name="javax.persistence.jdbc.password" value="12345678"/>
+
+
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+        <!--
+                ddl生成方式
+                    create:每次运行会把原来表删掉,重新创建一张表
+                    create-drop:每次运行都会把原来表删除,重新创建一张表,程序运行结束后,又把表删除
+                    update:如果没有表那么创建一张新的,如果有了则更新数据
+                    validate:不自动建表,如果没有表那么报错
+            -->
+        <property name="hibernate.hbm2ddl.auto" value="validate"/>
+
+    </properties>
+</persistence-unit>
+</persistence>
